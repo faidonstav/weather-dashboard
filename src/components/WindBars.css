@@ -1,0 +1,22 @@
+.wind-bars { 
+    display: flex; 
+    align-items: center; 
+    justify-content: space-between; 
+    gap: 4px; 
+    height: 61px; 
+    padding: 8px 1px 0; 
+    margin-top: 7px; 
+}
+
+.wind-bars i { 
+    flex: 1; 
+    display: block; 
+    max-width: 5px; 
+    min-height: 10px; 
+    border-radius: 5px; 
+    background: linear-gradient(180deg,#dce5e7,#53666e); 
+}
+
+.wind-bars i.highlight { 
+    background: linear-gradient(180deg,#20e3bb,#16a98f); 
+}

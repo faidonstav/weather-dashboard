@@ -1,0 +1,251 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap');
+
+:root {
+  font-family: 'DM Sans', sans-serif;
+  color: #f4f6f7;
+  background: #071014;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  --panel: #1b1e20;
+  --panel-soft: #202427;
+  --muted: #929da2;
+  --line: rgba(255,255,255,.09);
+  --mint: #20d4b2;
+}
+* { 
+  box-sizing: border-box; 
+}
+
+body { 
+  margin: 0; 
+  min-width: 320px; 
+  min-height: 100vh; 
+  background: radial-gradient(ellipse at 12% 80%, #19343b 0%, transparent 42%), #071014; 
+}
+
+button, input { 
+  font: inherit; 
+}
+button { 
+  color: inherit; 
+}
+#root { 
+  min-height: 100vh; 
+  display: grid; 
+  place-items: center; 
+  padding: 14px; 
+}
+
+.app-shell {
+  width: min(1440px, 100%); 
+  min-height: min(850px, calc(100vh - 28px)); 
+  display: flex;
+  gap: 12px; 
+  padding: 12px; 
+  border: 1px solid rgba(255,255,255,.06); 
+  border-radius: 34px;
+  background: #0b0e10; 
+  box-shadow: 0 28px 90px rgba(0,0,0,.48); 
+  overflow: hidden;
+}
+
+.workspace { 
+  flex: 1; 
+  min-width: 0; 
+  display: flex; 
+  flex-direction: column; 
+  gap: 12px; 
+  padding: 0 1px 0 0; 
+}
+
+.topbar { 
+  min-height: 44px; 
+  display: flex; 
+  align-items: center; 
+  justify-content: space-between; 
+  gap: 18px; 
+}
+
+.profile-button { 
+  display: flex; 
+  align-items: center; 
+  gap: 10px; 
+  border: 1px solid rgba(255,255,255,.04); 
+  border-radius: 22px; 
+  padding: 5px 12px 5px 6px; 
+  background: #1b1e20; 
+  color: #dfe4e5; 
+  font-size: 11px; 
+  cursor: pointer; 
+}
+
+.dashboard-grid { 
+  display: grid; 
+  grid-template-columns: minmax(0, 1.18fr) minmax(0, .92fr); 
+  gap: 12px; 
+  flex: 1; 
+  min-height: 0; 
+}
+
+.left-column, .right-column { 
+  min-width: 0; 
+  display: flex; 
+  flex-direction: column;
+  gap: 12px; 
+}
+
+.dashboard-footer { 
+  display: flex; 
+  justify-content: space-between; 
+  color: #59666b; 
+  font-size: 8px; 
+  letter-spacing: .12em; 
+  padding: 0 5px 1px; 
+}
+
+.dashboard-footer span:last-child { 
+  letter-spacing: 0; 
+}
+
+.search-results {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  width: 100%;
+  max-height: 280px;
+  overflow-y: auto;
+  background: #202528;
+  border: 1px solid rgba(255,255,255,.09);
+  border-radius: 14px;
+  padding: 6px;
+  box-shadow: 0 12px 30px rgba(0,0,0,.35);
+}
+
+.search-result {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  padding: 11px;
+  border: none;
+  border-radius: 9px;
+  background: transparent;
+  color: #e5eeee;
+  text-align: left;
+  cursor: pointer;
+}
+
+.search-result:hover {
+  background: #303a3e;
+}
+
+.search-result-info {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.search-result-info strong {
+  font-size: 12px;
+}
+
+.search-result-info small {
+  font-size: 10px;
+  color: #98a6ab;
+}
+
+.search-message {
+  padding: 10px;
+  font-size: 12px;
+  color: #98a6ab;
+}
+
+.search-loader {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.loading-message,
+.error-message {
+  font-size: 13px;
+  padding: 8px 12px;
+}
+
+.error-message {
+  color: #ff8585;
+}
+
+@media (max-width: 600px) {
+  .search-container {
+    width: auto;
+    flex: 1;
+  }
+}
+
+@media (min-width: 1200px) {
+  .app-shell { min-height: min(850px, calc(100vh - 28px)); }
+  .main-weather { min-height: 260px; }
+  .highlight-card { min-height: 145px; }
+  .city-card { min-height: 130px; }
+}
+@media (max-width: 900px) {
+  #root { display: block; padding: 0; }
+  .app-shell { min-height: 100vh; border-radius: 0; border: 0; padding: 12px; gap: 10px; }
+  .dashboard-grid { grid-template-columns: minmax(0,1fr); }
+  .sidebar { width: 54px; flex-basis: 54px; }
+  .right-column { display: grid; grid-template-columns: 1fr; }
+  .highlight-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+  .highlight-card { min-height: 150px; }
+  .main-weather { min-height: 260px; }
+}
+@media (max-width: 600px) {
+  .app-shell { display: block; padding: 10px; }
+  .sidebar { position: fixed; z-index: 20; left: 10px; top: 10px; bottom: 10px; width: 66px; transform: translateX(-120%); transition: transform .25s; box-shadow: 0 10px 40px rgba(0,0,0,.4); }
+  .sidebar.sidebar-open { transform: translateX(0); }
+  .mobile-scrim { display: block; position: fixed; inset: 0; z-index: 19; background: rgba(0,0,0,.55); border: 0; }
+  .workspace { gap: 12px; }
+  .topbar { gap: 9px; }
+  .mobile-menu { display: grid; place-items: center; flex: 0 0 40px; height: 40px; border: 0; border-radius: 12px; background: #1b1e20; color: #dce4e6; }
+  .search-box { width: auto; flex: 1; height: 40px; padding: 0 11px; }
+  .profile-button { padding: 5px; }
+  .profile-name, .profile-button > svg { display: none; }
+  .dashboard-grid { gap: 12px; }
+  .main-weather { min-height: 240px; padding: 12px; }
+  .weather-main-copy { grid-template-columns: repeat(2,minmax(0,1fr)); grid-template-areas: "date condition" "temperature temperature"; gap: 8px; min-height: 0; margin-top: 14px; }
+  .temperature-block { display: flex; align-items: baseline; justify-content: space-between; gap: 8px; }
+  .current-temp { font-size: clamp(40px,11vw,52px); }
+  .high-low { flex-direction: column; align-items: flex-end; gap: 3px; margin: 0; font-size: 11px; }
+  .weather-art-wrap { flex-direction: row; justify-content: flex-end; gap: 8px; }
+  .weather-art-wrap > .weather-icon { width: 48px; height: 48px; }
+  .condition-copy { max-width: 110px; align-items: flex-end; text-align: right; }
+  .condition-copy strong { font-size: 16px; }
+  .condition-copy span { font-size: 10px; }
+  .tiny-cloud { display: none; }
+  .forecast-panel { padding: 12px; }
+  .daily-list { grid-template-columns: repeat(7,56px); margin-top: 12px; }
+  .daily-card { min-height: 104px; }
+  .hourly-list { grid-template-columns: repeat(7,58px); overflow-x: auto; padding-bottom: 5px; margin-top: 20px; }
+  .hour-card { min-height: 92px; }
+  .highlight-grid { gap: 8px; }
+  .highlight-card { min-height: 145px; padding: 10px; border-radius: 17px; }
+  .city-grid { gap: 8px; }
+  .city-card { min-height: 130px; padding: 10px; }
+  .city-temp { font-size: 28px; }
+  .dashboard-footer { padding: 4px 2px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; }
+}
+
+
+
+
+
+
+
+

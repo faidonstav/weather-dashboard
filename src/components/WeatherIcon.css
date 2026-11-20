@@ -1,0 +1,7 @@
+.weather-icon { flex: 0 0 auto; }
+.sun-icon { color: #ffc65a; }
+.rain-icon { color: #83c8e9; }
+.storm-icon { color: #d8b7ff; }
+.wind-icon { color: #d9e2e5; }
+.cloud-icon { color: #d6e2e6; }
+.snow-icon { color: #a9deef; }

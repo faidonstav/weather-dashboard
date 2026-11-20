@@ -1,0 +1,78 @@
+.city-card { 
+    min-width: 0; 
+    min-height: 130px; 
+    border: 1px solid rgba(255,255,255,.025); 
+    border-radius: 20px; 
+    padding: 10px 12px; 
+    background: var(--panel);
+    display: flex; 
+    flex-direction: column; 
+    align-items: stretch; 
+    justify-content: space-between; 
+    text-align: left; 
+    cursor: pointer; 
+    transition: transform .2s, background .2s; 
+}
+.city-card:hover { 
+    transform: translateY(-2px); 
+    background: #252a2d; 
+}
+.city-card-heading { 
+    display: flex; 
+    align-items: flex-start; 
+    justify-content: space-between; 
+    gap: 6px; 
+}
+
+.city-card > .weather-icon { 
+    align-self: center; 
+    width: 54px; 
+    height: 54px; 
+    margin: 2px 0; 
+}
+
+.city-name { 
+    display: flex; 
+    flex-direction: column; 
+    gap: 1px; 
+    margin: 0; 
+    color: #dfe5e6; 
+    font-size: 11px; 
+}
+
+.city-name span { 
+    color: #859196; 
+    font-size: 9px; 
+}
+
+.city-temp { 
+    font-family: Manrope,sans-serif; 
+    font-size: 30px; 
+    letter-spacing: -2px; 
+    line-height: 1; 
+}
+
+.city-range { 
+    display: flex; 
+    justify-content: space-between; 
+    gap: 8px; 
+    color: #aeb8bc; 
+    font-size: 10px; 
+    white-space: nowrap; 
+}
+
+.city-range > span { 
+    display: flex; 
+    align-items: baseline; 
+    gap: 4px; 
+}
+
+.city-range small { 
+    color: #778489; 
+    font-size: 9px; 
+}
+
+.city-range strong { 
+    font-size: 10px; 
+    font-weight: 500; 
+}

@@ -1,0 +1,80 @@
+.main-weather { 
+    display: flex; 
+    flex-direction: column; 
+    gap: 20px; 
+    min-height: 260px; 
+    padding: 20px 24px; 
+    overflow: hidden; 
+    background: radial-gradient(ellipse at 88% 0%, rgba(32,212,178,.07), transparent 55%), var(--panel);
+}
+.main-weather__top { 
+    display: flex; 
+    align-items: center; 
+    justify-content: space-between; 
+    flex-wrap: wrap; 
+    gap: 8px 16px; 
+}
+.location-pill { 
+    display: inline-flex; 
+    align-items: center; 
+    gap: 6px; 
+    max-width: 100%; 
+    background: #dcebf4; 
+    color: #18252b; 
+    border-radius: 30px; 
+    padding: 6px 12px; 
+    font-size: 13px; 
+    font-weight: 600; 
+}
+.location-pill svg { 
+    flex: none; 
+}
+.location-pill span { 
+    min-width: 0; 
+    overflow: hidden; 
+    text-overflow: ellipsis;
+    white-space: nowrap; 
+}
+.main-weather__date { 
+    display: flex; 
+    align-items: baseline; 
+    gap: 10px; 
+    color: #b3bdc0; 
+    font-size: 12px;
+}
+.main-weather__date strong { 
+    color: #f4f6f7; 
+    font-family: Manrope, sans-serif; 
+    font-size: 15px; 
+    font-weight: 700; 
+    letter-spacing: -.3px;
+}
+.main-weather__hero { 
+    flex: 1; 
+    display: grid; 
+    grid-template-columns: minmax(0,1fr) minmax(170px,.55fr); 
+    align-items: center; 
+    gap: 20px; 
+}
+.main-weather__now { 
+    display: flex; 
+    align-items: center; 
+    gap: 20px; 
+    min-width: 0; 
+}
+.main-weather__icon { 
+    flex: none; 
+    width: 72px; 
+    height: 72px; 
+    display: grid; 
+    place-items: center; 
+}
+.main-weather__icon > * { width: 100%; height: 100%; }
+.main-weather__temp { display: flex; align-items: flex-start; margin: 0; font-family: Manrope, sans-serif; font-size: clamp(52px,6vw,80px); font-weight: 500; line-height: 1; letter-spacing: -3px; }
+.main-weather__temp span { margin: .14em 0 0 4px; color: var(--muted); font-size: .36em; font-weight: 500; letter-spacing: 0; }
+.main-weather__condition { margin: 8px 0 0; color: #e0e6e7; font-size: 16px; font-weight: 500; }
+.main-weather__stats { display: grid; margin: 0; padding: 4px 16px; border-radius: 16px; background: var(--panel-soft); }
+.main-weather__stats > div { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; padding: 10px 0; }
+.main-weather__stats > div + div { border-top: 1px solid var(--line); }
+.main-weather__stats dt { color: var(--muted); font-size: 12px; }
+.main-weather__stats dd { margin: 0; font-size: 15px; font-weight: 600; }

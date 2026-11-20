@@ -1,0 +1,82 @@
+.panel { 
+    background: var(--panel); 
+    border-radius: 23px; 
+    border: 1px solid rgba(255,255,255,.025); 
+}
+.city-map { 
+    flex: 1; 
+    min-height: 260px; 
+    padding: 12px; 
+    display: flex; 
+    flex-direction: column; 
+    gap: 10px; 
+}
+.map-mode { 
+    color: #8c989d; 
+    font-size: 10px; 
+}
+.schematic-map { 
+    position: relative; 
+    flex: 1; 
+    min-height: 220px; 
+    overflow: hidden; 
+    border-radius: 14px; 
+    background: #17282d; 
+}
+.schematic-map > svg { 
+    display: block; 
+    width: 100%; 
+    height: 100%; 
+    min-height: 220px; 
+}
+.map-street { 
+    fill: none; 
+    stroke: #2b3a3f; 
+    stroke-width: 8; 
+    stroke-linecap: round; 
+}
+.map-main-road { 
+    fill: none; 
+    stroke: #776e56; 
+    stroke-width: 13; 
+    stroke-linecap: round; 
+}
+.map-coordinate, .map-disclaimer { 
+    position: absolute; 
+    padding: 6px 9px; 
+    border: 1px solid rgba(255,255,255,.08); 
+    border-radius: 10px; 
+    background: rgba(11,14,16,.82); 
+    color: #c4ced0; font-size: 9px; 
+}
+.map-coordinate { 
+    top: 10px; 
+    left: 10px; 
+}
+.map-marker { 
+    position: absolute; 
+    top: 48%; 
+    left: 50%; 
+    color: #20d4b2; 
+    transform: translate(-50%,-100%); 
+    filter: drop-shadow(0 3px 6px rgba(0,0,0,.65)); 
+}
+.map-marker svg { 
+    stroke: #0b2422; 
+}
+.map-city-label { 
+    position: absolute; 
+    top: calc(48% + 2px); 
+    left: 50%; 
+    padding: 4px 8px; 
+    border-radius: 10px; 
+    background: #0b0e10; 
+    color: #e8f4f3; 
+    font-size: 10px; 
+    white-space: nowrap; 
+    transform: translateX(-50%); 
+}
+.map-disclaimer { 
+    right: 10px; 
+    bottom: 10px; 
+}
